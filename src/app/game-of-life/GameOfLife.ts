@@ -1,6 +1,6 @@
 export enum Cell {
-  Alive = "Alive",
-  Dead = "Dead",
+  Alive = 'Alive',
+  Dead = 'Dead',
 }
 
 export type State = Cell[];
@@ -17,7 +17,7 @@ export class GameOfLife {
 
   public static new(width: number, height: number, initial: State): GameOfLife {
     if (initial.length < width * height) {
-      throw new Error("Invalid initial State");
+      throw new Error('Invalid initial State');
     }
 
     return new GameOfLife(initial, { width, height });

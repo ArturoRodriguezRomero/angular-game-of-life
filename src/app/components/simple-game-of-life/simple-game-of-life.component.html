@@ -1,1 +1,15 @@
-simple game
+<section>
+  <label className="example">
+    Example
+    <select [(ngModel)]="selected" (change)="onExampleChange()">
+      <option
+        *ngFor="let example of examples | keyvalue"
+        [value]="example.key"
+        >{{ example.key }}</option
+      >
+    </select>
+  </label>
+  <div class="world" [ngStyle]="getWorldStyle()">
+    <div *ngFor="let cell of game.state" [ngClass]="getCellClass(cell)"></div>
+  </div>
+</section>
